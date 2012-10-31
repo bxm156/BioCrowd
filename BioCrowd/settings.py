@@ -123,6 +123,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'BioCrowd.apps.accounts',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -159,7 +160,7 @@ LOGGING = {
 }
 
 #Profile for users
-#AUTH_PROFILE_MODULE = 'account.UserProfile'
+AUTH_PROFILE_MODULE = 'accounts.UserProfile'
 
 #The URL to redirect to when a user login is required
 #LOGIN_URL = '/login/'
