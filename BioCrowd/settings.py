@@ -102,7 +102,16 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_cas.middleware.CASMiddleware'
 )
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'BioCrowd.apps.login.backends.PopulatedCASBackend',
+)
+
+CAS_SERVER_URL = "https://login.case.edu/cas/"
+
 
 ROOT_URLCONF = 'BioCrowd.urls'
 
@@ -124,6 +133,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'BioCrowd.apps.accounts',
+    'BioCrowd.apps.login',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -163,7 +173,7 @@ LOGGING = {
 AUTH_PROFILE_MODULE = 'accounts.UserProfile'
 
 #The URL to redirect to when a user login is required
-#LOGIN_URL = '/login/'
+LOGIN_URL = '/login/'
 
 #The URL to redirect to when the user logs in
-#LOGIN_REDIRECT_URL = '/account/'
+LOGIN_REDIRECT_URL = '/account/'

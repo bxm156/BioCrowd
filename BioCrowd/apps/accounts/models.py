@@ -10,12 +10,13 @@ UNDERGRADUATE = 1
 POSITION_LEVELS = (
                    (EXPERT,"Expert"),
                    (PROFESSOR,"Professsor"),
-                   (GRADUATE,"Graduate Student")
+                   (GRADUATE,"Graduate Student"),
                    (UNDERGRADUATE,"Undergraduate Student")
                    )
 
 class UserProfile(models.Model):
+    user = models.ForeignKey(User, primary_key=True)
     position = models.IntegerField(choices=POSITION_LEVELS,default=PROFESSOR)
-    supervisor = models.ForeignKey(User)
+    supervisor = models.ForeignKey(User,related_name="supervisor",null=True)
     trust_level = models.PositiveSmallIntegerField(default=5)
     
