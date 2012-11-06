@@ -18,5 +18,4 @@ class UserProfile(models.Model):
     user = models.ForeignKey(User, primary_key=True)
     position = models.IntegerField(choices=POSITION_LEVELS,default=PROFESSOR)
     supervisor = models.ForeignKey(User,related_name="supervisor",null=True)
-    trust_level = models.PositiveSmallIntegerField(default=5)
     
