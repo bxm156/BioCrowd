@@ -11,7 +11,7 @@ class PredictionModel():
     
     def __init__(self,job_model):
         self.job = job_model
-        self.worker_profile = get_model(*settings.WORKER_PROFILE.split(',',1))
+        self.worker_profile = get_model(*settings.WORKER_PROFILE.split('.',1))
         self.worker_manager = self.worker_profile._default_manager
     
     def get_worker_count(self):
