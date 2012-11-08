@@ -5,11 +5,13 @@ Created on Nov 7, 2012
 '''
 from django.db import models
 import csengine.settings as settings
-from csengine.query.models import MultipleChoiceQuestion
+import csengine.query.models
 
 class HumanTask(models.Model):
     worker = models.ForeignKey(settings.WORKER_PROFILE)
+    completed = models.BooleanField()
+    date_finished = models.DateTimeField()
     
     def getQuestion(self):
-        return MultipleChoiceQuestion.objects.filter(hit=id)
+        return csengine.query.models.MultipleChoiceQuestion.objects.get(hit=id)
         
