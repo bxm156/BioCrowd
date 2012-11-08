@@ -1,1 +1,1 @@
-{% extends master.dhtml %}
+{% extends "master.dhtml" %}
