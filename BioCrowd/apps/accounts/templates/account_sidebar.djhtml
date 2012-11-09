@@ -1,0 +1,2 @@
+<h3><span class="quiet">{{ first_name }} {{ last_name}}</span></h3><br />
+<a href="logout/">Logout</a>

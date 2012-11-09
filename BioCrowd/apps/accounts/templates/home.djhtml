@@ -1,1 +1,5 @@
 {% extends "master.djhtml" %}
+{% load account_tags %}
+{% block left %}
+	{% account_sidebar %}
+{% endblock left %}

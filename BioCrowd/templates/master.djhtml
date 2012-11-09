@@ -35,7 +35,7 @@
 				<div id="center" class="precolborder column span-16 last">{% block content %}Content{% endblock content %}</div>
 			</div>
 			<div class="block">
-				<div id="footer" class="span-24 last">Questions/Comments: Contact Bryan Marty</div>
+				<div id="footer" class="span-24 last"><span class="quiet">Questions/Comments: Contact Bryan Marty</span></div>
 			</div>
 		</div>
 	{% endblock body %}
