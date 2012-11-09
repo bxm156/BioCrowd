@@ -5,7 +5,7 @@ from BioCrowd.apps.accounts.forms import UserProfileForm
 from django.contrib.auth.decorators import login_required
 
 def home(request):
-    return render(request,'home.djhtml')
+    return render(request,'account.djhtml')
 
 @login_required
 def profile(request):

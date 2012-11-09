@@ -1,0 +1,8 @@
+{% extends "master.djhtml" %}
+{% block content %}
+	<div class="block">
+		<div id="left" class="column span-7 colborder">{% block left %}Left Bar{% endblock left %}</div>
+		<div id="center" class="column span-7 colborder">{% block center %}Center{% endblock center %}</div>
+		<div id="right" class="column span-8 last">{% block right %}Right{% endblock right %}</div>
+	</div>
+{% endblock content %}

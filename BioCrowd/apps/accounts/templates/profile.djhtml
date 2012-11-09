@@ -1,8 +1,8 @@
-{% extends "home.djhtml" %}
-{% block content %}
+{% extends "account.djhtml" %}
+{% block center %}
 <h3><span class="alt">User Profile</span></h3>
 <form action="" method="post">{% csrf_token %}
 {{ profile_form.as_p }}
 <input type="submit" value="Update" />
 </form>
-{% endblock content %}
+{% endblock center %}

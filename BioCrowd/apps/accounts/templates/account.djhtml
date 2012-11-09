@@ -1,4 +1,4 @@
-{% extends "master.djhtml" %}
+{% extends "master_sidebar.djhtml" %}
 {% load account_tags %}
 {% block left %}
 	{% account_sidebar %}
