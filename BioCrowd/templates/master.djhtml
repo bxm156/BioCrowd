@@ -8,6 +8,9 @@
 		<link rel="stylesheet" href="{% get_static_prefix %}blueprint/src/reset.css" type="text/css" media="screen, projection">
 		<link rel="stylesheet" href="{% get_static_prefix %}blueprint/src/liquid.css" type="text/css" media="screen, projection">
 		<link rel="stylesheet" href="{% get_static_prefix %}blueprint/src/typography.css" type="text/css" media="screen, projection">
+		<link rel="stylesheet" href="{% get_static_prefix %}blueprint/src/forms.css" type="text/css" media="screen, projection">
+		<!--<link rel="stylesheet" href="{% get_static_prefix %}blueprint/screen.css" type="text/css" media="screen, projection">-->
+		<!--<link rel="stylesheet" href="{% get_static_prefix %}blueprint/print.css" type="text/css" media="print">-->
 		<link rel="stylesheet" href="{% get_static_prefix %}blueprint/plugins/fancy-type/fancy-type.css" type="text/css" media="screen, projection">
 		<!--[if lt IE 8]>
 			<link rel="stylesheet" href="{% get_static_prefix %}blueprint/ie.css" type="text/css" media="screen, projection">
