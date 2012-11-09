@@ -1,5 +1,5 @@
 {% extends "master.djhtml" %}
-{% block body %}
+{% block content %}
 		{% if errors %}
 			{{ errors }}
 		{% endif %}
@@ -8,4 +8,4 @@
 			<input type="hidden" name="next" value="{{ next }}" />
 			<input type="submit" value="Login" />
 		</form>
-{% endblock body %}
+{% endblock content %}

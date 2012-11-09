@@ -9,8 +9,6 @@
 		<link rel="stylesheet" href="{% get_static_prefix %}blueprint/src/liquid.css" type="text/css" media="screen, projection">
 		<link rel="stylesheet" href="{% get_static_prefix %}blueprint/src/typography.css" type="text/css" media="screen, projection">
 		<link rel="stylesheet" href="{% get_static_prefix %}blueprint/plugins/fancy-type/fancy-type.css" type="text/css" media="screen, projection">
-		<link rel="stylesheet" href="{% get_static_prefix %}blueprint/screen.css" type="text/css" media="screen, projection">
-		<link rel="stylesheet" href="{% get_static_prefix %}blueprint/print.css" type="text/css" media="print"> 
 		<!--[if lt IE 8]>
 			<link rel="stylesheet" href="{% get_static_prefix %}blueprint/ie.css" type="text/css" media="screen, projection">
 		<![endif]-->
@@ -21,7 +19,25 @@
 	</head>
 	<body>
 	{% block body %}
-	
+		<div class ="container">
+			<div class="block">
+				<hr class="space">
+				<div id="header" class="span-24 last">
+					<h1><span class="">BioCrowd</span></h1>
+				</div>
+				<hr/>
+				<div id="subheader" class="span-24 last"><h2><span class="alt">A Crowdsourcing Platform</span> </h2></div>
+			</div>
+			<hr/>
+			<hr class="space">
+			<div class="block">
+				<div id="left" class="column span-7">{% block left %}Left Bar{% endblock left %}</div>
+				<div id="center" class="precolborder column span-16 last">{% block content %}Content{% endblock content %}</div>
+			</div>
+			<div class="block">
+				<div id="footer" class="span-24 last">Questions/Comments: Contact Bryan Marty</div>
+			</div>
+		</div>
 	{% endblock body %}
 	</body>
 </html>

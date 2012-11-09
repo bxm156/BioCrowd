@@ -195,3 +195,11 @@ hr.space {
   background: #fff;
   color: #fff;
 }
+
+/* Border with more whitespace on left hand side
+    of a column, spans one column. */
+.precolborder {
+  padding-left: 24px;
+  margin-left: 15px;
+  border-left: 1px solid #eee;
+}
