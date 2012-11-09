@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>{% block title %}ServicePad {% endblock title %}</title>
+		<title>{% block title %}BioCrowd {% endblock title %}</title>
 		{% block css %}
 		<!-- Liquid Blueprint CSS -->
 		<link rel="stylesheet" href="{% get_static_prefix %}blueprint/src/reset.css" type="text/css" media="screen, projection">
