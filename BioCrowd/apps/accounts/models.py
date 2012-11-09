@@ -15,7 +15,7 @@ POSITION_LEVELS = (
                    )
 
 class UserProfile(models.Model):
-    user = models.ForeignKey(User, primary_key=True)
+    user = models.ForeignKey(User, primary_key=True, editable=False)
     position = models.IntegerField(choices=POSITION_LEVELS,default=PROFESSOR)
     supervisor = models.ForeignKey(User,related_name="supervisor",null=True)
     
