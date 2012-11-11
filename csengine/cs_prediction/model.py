@@ -4,7 +4,7 @@ Created on Nov 6, 2012
 @author: Bryan
 '''
 import csengine.settings as settings
-from csengine.jobs.plan import JobPlan
+from csengine.cs_jobs.plan import JobPlan
 from django.db.models import get_model
 
 class PredictionModel():

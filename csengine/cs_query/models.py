@@ -4,10 +4,10 @@ Created on Nov 6, 2012
 @author: Bryan
 '''
 from django.db import models
-import csengine.hits.models
+import csengine.cs_hits.models
 
 class Question(models.Model):
-    hit = models.ForeignKey(csengine.hits.models.HumanTask)
+    hit = models.ForeignKey(csengine.cs_hits.models.HumanTask)
     question = models.CharField(max_length=30)
     image = models.URLField()
     

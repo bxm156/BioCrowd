@@ -5,7 +5,7 @@ Created on Nov 7, 2012
 '''
 from django.db import models
 import csengine.settings as settings
-import csengine.query.models
+import csengine.cs_query.models
 
 class HumanTask(models.Model):
     worker = models.ForeignKey(settings.WORKER_PROFILE)
@@ -13,5 +13,5 @@ class HumanTask(models.Model):
     date_finished = models.DateTimeField()
     
     def getQuestion(self):
-        return csengine.query.models.MultipleChoiceQuestion.objects.get(hit=id)
+        return csengine.cs_query.models.MultipleChoiceQuestion.objects.get(hit=id)
         

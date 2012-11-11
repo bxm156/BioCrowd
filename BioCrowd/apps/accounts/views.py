@@ -1,8 +1,9 @@
 # Create your views here.
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from BioCrowd.apps.accounts.forms import UserProfileForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout as djangoLogout
 
 def home(request):
     return render(request,'account.djhtml')
@@ -18,3 +19,8 @@ def profile(request):
         profile = request.user.get_profile()
         profile_form = UserProfileForm(instance=profile)
         return render(request, 'profile.djhtml', {'profile_form':profile_form})
+    
+def logout(request):
+    if request.user.is_authenticated():
+        djangoLogout(request)
+    return redirect("/")

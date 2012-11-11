@@ -35,8 +35,7 @@
 			<hr class="space">
 			{% block content %}
 			<div class="block">
-				<div id="left" class="column span-7">{% block left %}Left Bar{% endblock left %}</div>
-				<div id="center" class="precolborder column span-16 last">{% block center %}Content{% endblock center %}</div>
+				<div id="center" class=" span-24 last">{% block center %}Content{% endblock center %}</div>
 			</div>
 			{% endblock content %}
 			<div class="block">

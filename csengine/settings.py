@@ -6,4 +6,4 @@ Created on Nov 6, 2012
 
 #Profile for users
 PROFILE_MODULE = 'accounts.UserProfile'
-WORKER_PROFILE = 'workers.WorkerProfile'
+WORKER_PROFILE = 'cs_workers.WorkerProfile'

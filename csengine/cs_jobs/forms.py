@@ -1,6 +1,6 @@
 
 from django import forms
-from csengine.jobs.models import CrowdsourceJob
+from csengine.cs_jobs.models import CrowdsourceJob
 
 class JobForm(forms.ModelForm):
     

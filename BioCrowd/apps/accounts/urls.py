@@ -7,5 +7,6 @@ from django.conf.urls.defaults import patterns
 
 urlpatterns = patterns('BioCrowd.apps.accounts.views',
     (r'^profile/$','profile'),
+    (r'^logout/$','logout'),
     (r'^$', 'home'),
 )
