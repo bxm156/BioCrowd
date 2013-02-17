@@ -1,5 +1,5 @@
 from django.template.response import TemplateResponse
-from csengine.cs_jobs.forms import JobForm
+from pycrowd.cs_jobs.forms import JobForm
 
 def create(request,template_name=None,extra_context=None):
     if request.method == 'POST':

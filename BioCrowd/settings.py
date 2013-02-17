@@ -136,10 +136,10 @@ INSTALLED_APPS = (
     'BioCrowd.apps.login',
     'BioCrowd.apps.pages',
     'BioCrowd.apps.jobs',
-    'csengine.cs_workers',
-    'csengine.cs_query',
-    'csengine.cs_jobs',
-    'csengine.cs_hits',
+    'pycrowd.cs_workers',
+    'pycrowd.cs_query',
+    'pycrowd.cs_jobs',
+    'pycrowd.cs_hits',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

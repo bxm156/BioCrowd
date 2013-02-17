@@ -3,8 +3,8 @@ Created on Nov 6, 2012
 
 @author: Bryan
 '''
-import csengine.settings as settings
-from csengine.cs_jobs.plan import JobPlan
+import pycrowd.settings as settings
+from pycrowd.cs_jobs.plan import JobPlan
 from django.db.models import get_model
 
 class PredictionModel():

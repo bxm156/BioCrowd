@@ -22,7 +22,7 @@ APP_DIR = os.path.abspath(os.path.dirname(__file__))
 PROJECT_ROOT = os.getenv("PROJECT_ROOT", PROJECT_ROOT)
 APP_DIR = os.getenv("APP_DIR",APP_DIR)
 APP_ROOT = os.path.join(PROJECT_ROOT,APP_DIR)
-CROWDSOURCING_ENGINE = os.path.join(PROJECT_ROOT,'csengine')
+CROWDSOURCING_ENGINE = os.path.join(PROJECT_ROOT,'pycrowd')
 
 #For handling the database
 # DATABASE_URL - https://github.com/kennethreitz/dj-database-url
