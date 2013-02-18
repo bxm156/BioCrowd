@@ -1,0 +1,3 @@
+[submodule "BioCrowd/libs/pycrowd"]
+	path = BioCrowd/libs/pycrowd
+	url = https://github.com/bxm156/pycrowd.git
