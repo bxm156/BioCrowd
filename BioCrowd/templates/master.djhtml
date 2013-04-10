@@ -3,45 +3,19 @@
 <html>
 	<head>
 		<title>{% block title %}BioCrowd {% endblock title %}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		{% block css %}
-		<!-- Liquid Blueprint CSS -->
-		<link rel="stylesheet" href="{% get_static_prefix %}blueprint/src/reset.css" type="text/css" media="screen, projection">
-		<link rel="stylesheet" href="{% get_static_prefix %}blueprint/src/liquid.css" type="text/css" media="screen, projection">
-		<link rel="stylesheet" href="{% get_static_prefix %}blueprint/src/typography.css" type="text/css" media="screen, projection">
-		<link rel="stylesheet" href="{% get_static_prefix %}blueprint/src/forms.css" type="text/css" media="screen, projection">
-		<!--<link rel="stylesheet" href="{% get_static_prefix %}blueprint/screen.css" type="text/css" media="screen, projection">-->
-		<!--<link rel="stylesheet" href="{% get_static_prefix %}blueprint/print.css" type="text/css" media="print">-->
-		<link rel="stylesheet" href="{% get_static_prefix %}blueprint/plugins/fancy-type/fancy-type.css" type="text/css" media="screen, projection">
-		<!--[if lt IE 8]>
-			<link rel="stylesheet" href="{% get_static_prefix %}blueprint/ie.css" type="text/css" media="screen, projection">
-		<![endif]-->
+		<!-- Boostrap CSS -->
+		<link href="{% get_static_prefix %}bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 		{% endblock css %}
-		{% block javascript %}
-		<script type="text/javascript" src="{% get_static_prefix %}js/jquery-1.8.2.js"></script>
-		{% endblock javascript %}
 	</head>
 	<body>
-	{% block body %}
-		<div class ="container">
-			<div class="block">
-				<hr class="space">
-				<div id="header" class="span-24 last">
-					<h1><span class="">BioCrowd</span></h1>
-				</div>
-				<hr/>
-				<div id="subheader" class="span-24 last"><h2><span class="alt">A Crowdsourcing Platform</span> </h2></div>
-			</div>
-			<hr/>
-			<hr class="space">
-			{% block content %}
-			<div class="block">
-				<div id="center" class=" span-24 last">{% block center %}Content{% endblock center %}</div>
-			</div>
-			{% endblock content %}
-			<div class="block">
-				<div id="footer" class="span-24 last"><span class="quiet">Questions/Comments: Contact Bryan Marty</span></div>
-			</div>
-		</div>
-	{% endblock body %}
+		{% block body %}
+		{% include 'footer.djhtml' %}
+		{% endblock body %}
+		{% block javascript %}
+		<script type="text/javascript" src="{% get_static_prefix %}js/jquery-1.8.2.js"></script>
+		<script type="text/javascript" src="{% get_static_prefix %}js/bootstrap.min.js"></script>
+		{% endblock javascript %}
 	</body>
 </html>
