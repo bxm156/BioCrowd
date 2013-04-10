@@ -3,9 +3,9 @@ Created on Nov 1, 2012
 
 @author: Bryan
 '''
-from django.conf.urls.defaults import patterns
+from django.conf.urls import patterns
 
-urlpatterns = patterns('pycrowd.cs_jobs.views',
+urlpatterns = patterns('pycrowd.jobs.views',
     (r'^create/$','create',{'template_name':'create.djhtml','extra_context':{'next':'test.html'}}),
 )
 

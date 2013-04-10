@@ -22,7 +22,8 @@ APP_DIR = os.path.abspath(os.path.dirname(__file__))
 PROJECT_ROOT = os.getenv("PROJECT_ROOT", PROJECT_ROOT)
 APP_DIR = os.getenv("APP_DIR",APP_DIR)
 APP_ROOT = os.path.join(PROJECT_ROOT,APP_DIR)
-CROWDSOURCING_ENGINE = os.path.join(PROJECT_ROOT,'pycrowd')
+LIB_DIR = os.path.join(APP_ROOT,'libs')
+CROWDSOURCING_ENGINE = os.path.join(LIB_DIR,'pycrowd')
 
 #For handling the database
 # DATABASE_URL - https://github.com/kennethreitz/dj-database-url
@@ -31,5 +32,5 @@ DATABASE_URL = 'sqlite:////' + PROJECT_ROOT + '/db/sqlite.db'
 #Add the proper directories to our path
 sys.path.append(PROJECT_ROOT)
 sys.path.append(os.path.join(APP_ROOT,'apps'))
-sys.path.append(os.path.join(APP_ROOT,'libs'))
+sys.path.append(LIB_DIR)
 sys.path.append(CROWDSOURCING_ENGINE)

@@ -100,9 +100,10 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django_cas.middleware.CASMiddleware'
+    #'django_cas.middleware.CASMiddleware'
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -136,12 +137,13 @@ INSTALLED_APPS = (
     'BioCrowd.apps.login',
     'BioCrowd.apps.pages',
     'BioCrowd.apps.jobs',
-    'pycrowd.cs_workers',
-    'pycrowd.cs_query',
-    'pycrowd.cs_jobs',
-    'pycrowd.cs_hits',
+    'pycrowd.workers',
+    'pycrowd.query',
+    'pycrowd.jobs',
+    'pycrowd.hits',
+    'debug_toolbar',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
@@ -183,3 +185,5 @@ LOGIN_URL = '/login/'
 
 #The URL to redirect to when the user logs in
 LOGIN_REDIRECT_URL = '/account/'
+
+INTERNAL_IPS = ('127.0.0.1', ) 
