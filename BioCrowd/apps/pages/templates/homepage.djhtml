@@ -1,4 +1,4 @@
-{% extends "master.djhtml" %}
+{% extends "master_sidebar.djhtml" %}
 {% block css %}
 {{ block.super }}
 <style type="text/css">
@@ -107,10 +107,8 @@
 
 			<hr>
 
-
 			{% include 'footer.djhtml' %}
 			
-
 		</div>
 		<!-- /container -->
 {% endblock body %}

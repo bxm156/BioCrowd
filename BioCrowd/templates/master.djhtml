@@ -18,7 +18,7 @@
 		{% endblock body %}
 		{% block javascript %}
 		<script type="text/javascript" src="{% get_static_prefix %}js/jquery-1.8.2.js"></script>
-		<script type="text/javascript" src="{% get_static_prefix %}js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="{% get_static_prefix %}bootstrap/js/bootstrap.min.js"></script>
 		{% endblock javascript %}
 	</body>
 </html>
