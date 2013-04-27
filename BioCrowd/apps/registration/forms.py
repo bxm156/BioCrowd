@@ -1,17 +1,20 @@
 from django import forms
 
 from BioCrowd import settings
-from BioCrowd.apps.accounts.models import UserProfile
+from BioCrowd.apps.accounts.models import UserProfile, User
 
 class UserProfileForm(forms.ModelForm):
     
     class Meta:
         model = UserProfile
         
-class UserForm(forms.Form):
-    
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput)
+    confirm_password = forms.CharField(widget=forms.PasswordInput)
     class Meta:
-        model = settings.AUTH_USER_MODEL
+        model = User
+        fields = ('first_name', 'last_name', 'email', 'password', 'confirm_password', )
+        #exclude = ('last_login',)
         
 class UserRegistrationForm(forms.Form):
     first_name = forms.CharField(max_length=30)
