@@ -1,4 +1,1 @@
 {% extends "master_sidebar.djhtml" %}
-{% block project_name %}
-{{ SITE_TITLE }}
-{% endblock project_name %}

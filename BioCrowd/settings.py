@@ -136,9 +136,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'BioCrowd.apps.accounts',
+    'BioCrowd.apps.registration',
     'BioCrowd.apps.login',
     'BioCrowd.apps.pages',
     'BioCrowd.apps.jobs',
+    'BioCrowd.apps.universities',
     'pycrowd.workers',
     'pycrowd.query',
     'pycrowd.jobs',
@@ -185,6 +187,7 @@ LOGGING = {
 
 #Profile for users
 AUTH_PROFILE_MODULE = 'accounts.UserProfile'
+AUTH_USER_MODEL = 'accounts.User'
 
 #The URL to redirect to when a user login is required
 LOGIN_URL = '/login/'

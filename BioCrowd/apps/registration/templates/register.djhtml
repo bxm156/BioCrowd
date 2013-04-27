@@ -1,0 +1,7 @@
+{% extends 'master_simple.djhtml' %}
+{% block content %}
+<h1>Sign up</h1>
+<div class="hero-unit">
+ Welcome
+</div>
+{% endblock content %}

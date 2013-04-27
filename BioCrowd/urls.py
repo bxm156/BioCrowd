@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
     
     (r'^login/', include('BioCrowd.apps.login.urls')),
+    (r'^account/', include('BioCrowd.apps.registration.urls')),
     (r'^account/', include('BioCrowd.apps.accounts.urls')),
     (r'^jobs/', include('BioCrowd.apps.jobs.urls')),
     (r'', include('BioCrowd.apps.pages.urls')),
