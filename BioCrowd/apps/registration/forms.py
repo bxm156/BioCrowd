@@ -17,5 +17,5 @@ class UserRegistrationForm(forms.Form):
     first_name = forms.CharField(max_length=30)
     last_name = forms.CharField(max_length=30)
     email = forms.CharField(max_length=254)
-    password = forms.PasswordInput()
-    confirm_password = forms.PasswordInput()
+    password = forms.CharField(widget=forms.PasswordInput)
+    confirm_password = forms.CharField(widget=forms.PasswordInput)

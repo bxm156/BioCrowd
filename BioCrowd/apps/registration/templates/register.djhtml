@@ -2,6 +2,12 @@
 {% block content %}
 <h1>Sign up</h1>
 <div class="hero-unit">
- Welcome
+	{% if errors %}
+			{{ errors }}
+	{% endif %}
+	<form action="" method="post">{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Submit" class="btn btn-primary" />
+	</form>
 </div>
 {% endblock content %}
