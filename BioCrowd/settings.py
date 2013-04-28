@@ -145,6 +145,7 @@ INSTALLED_APPS = (
     'pycrowd.query',
     'pycrowd.jobs',
     'pycrowd.hits',
+    'crispy_forms',
     'debug_toolbar',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
@@ -155,6 +156,8 @@ INSTALLED_APPS = (
 COMPRESS_PRECOMPILERS = (
    ('text/less', 'lessc {infile} {outfile}'),
 )
+
+CRISPY_TEMPLATE_PACK = 'bootstrap'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

@@ -1,15 +1,8 @@
 {% extends 'master_simple.djhtml' %}
+{% load crispy_forms_tags %}
 {% block content %}
 <h1>Sign up</h1>
-<div class="hero-unit">
-	{% if errors %}
-	{{ errors }}
-	{% endif %}
-
-	<form action="/account/register/" method="post">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<input type="submit" value="Sign up" class="btn btn-primary"/>
-	</form>
+<div class="hero-unit">	
+	{% crispy form %}
 </div>
 {% endblock content %}
