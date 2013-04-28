@@ -21,10 +21,29 @@ class UserForm(forms.ModelForm):
         super(UserForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_id = 'id-registration'
-        self.helper.form_class = 'blueForms'
+        self.helper.form_class = 'form-horizontal'
         self.helper.form_method = 'post'
         self.helper.form_action = '/account/register/'
         self.helper.add_input(Submit('submit', 'Sign up'))
+        
+    def clean_confirm_password(self):
+        password = self.cleaned_data.get('password')
+        confirm_password = self.cleaned_data.get('confirm_password')
+    
+        if not confirm_password:
+            raise forms.ValidationError("You must confirm your password")
+        if password != confirm_password:
+            raise forms.ValidationError("Your passwords do not match")
+        return confirm_password
+    
+    def save(self):
+        new_user = User.objects.create_user(
+            email=self.cleaned_data['email'],
+            password=self.cleaned_data.get('password'),
+            first_name=self.cleaned_data['first_name'],
+            last_name=self.cleaned_data['last_name'],
+        )
+        new_user.save()
         
 class UserRegistrationForm(forms.Form):
     first_name = forms.CharField(max_length=30)
