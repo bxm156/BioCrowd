@@ -18,10 +18,14 @@ class User(AbstractBaseUser):
         return "{first_name} {last_name}".format(first_name=self.first_name, last_name=self.last_name)
     
     def get_short_name(self):
-        return "{first_name}".format(first_name=self.first_name)
-    
+        return self.first_name
+
     def __unicode__(self):
-        return "User: {id}".format(id=self.id)
+        return "{first_name} {last_name} ({id})".format(
+            first_name=self.first_name,
+            last_name=self.last_name,
+            id=self.id
+        )
     
     objects = MyUserManager()
 

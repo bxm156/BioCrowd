@@ -5,10 +5,8 @@ Created on Nov 1, 2012
 '''
 from django.conf.urls import patterns
 
-urlpatterns = patterns('pycrowd.jobs.views',
-    (r'^create/$','create',{'template_name':'create.djhtml','extra_context':{'next':'test.html'}}),
-)
 
-urlpatterns += patterns('BioCrowd.apps.jobs.views',
+urlpatterns = patterns('BioCrowd.apps.jobs.views',
+    (r'^create/$', 'create'),
     (r'^$', 'home'),
 )

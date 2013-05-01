@@ -10,3 +10,10 @@ class University(models.Model):
     
     class Meta:
         unique_together= ('name', 'address', 'city', 'state', 'zipcode' ,'url')
+        
+    def __unicode__(self):
+        return "{school}, {city}, {state}".format(
+            school=self.name,
+            city=self.city,
+            state=self.state
+        )

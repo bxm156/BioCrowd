@@ -1,11 +1,8 @@
-{% extends "master.djhtml" %}
-{% block center %}
-{% if errors %}
-	{{ errors }}
-{% endif %}
-<form action="" method="post">{% csrf_token %}
-	{{ form.as_p }}
-	<input type="hidden" name="next" value="{{ next }}" />
-	<input type="submit" value="Create" />
-</form>
-{% endblock center %}
+{% extends 'master_simple.djhtml' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1>Start A Crowdsourcing Job!</h1>
+<div class="hero-unit">	
+	{% crispy form %}
+</div>
+{% endblock content %}

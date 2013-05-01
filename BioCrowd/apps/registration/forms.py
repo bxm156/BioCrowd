@@ -2,14 +2,11 @@ from django import forms
 
 from BioCrowd import settings
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit
+from crispy_forms.layout import Submit, Layout, Fieldset, Field
+from crispy_forms.bootstrap import FormActions
 from BioCrowd.apps.accounts.models import UserProfile, User
 
-class UserProfileForm(forms.ModelForm):
-    
-    class Meta:
-        model = UserProfile
-        
+
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)
     confirm_password = forms.CharField(widget=forms.PasswordInput)
@@ -21,10 +18,27 @@ class UserForm(forms.ModelForm):
         super(UserForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_id = 'id-registration'
-        self.helper.form_class = 'form-horizontal'
+        #self.helper.form_class = 'form-horizontal'
         self.helper.form_method = 'post'
         self.helper.form_action = '/account/register/'
         self.helper.add_input(Submit('submit', 'Sign up'))
+        #self.helper.layout = Layout(
+        #    Fieldset(
+        #        'something',
+        #        'first_name',
+        #        'last_name',
+        #        'email',
+        #        'password',
+        #        'confirm_password'
+        #    ),
+        #    FormActions(
+        #        Submit('submit', 'Signup')
+        #    )
+        #)
+        #self.helper.all().wrap(Field, css_class="input-xxlarge")
+        
+
+        
         
     def clean_confirm_password(self):
         password = self.cleaned_data.get('password')
@@ -42,12 +56,23 @@ class UserForm(forms.ModelForm):
             password=self.cleaned_data.get('password'),
             first_name=self.cleaned_data['first_name'],
             last_name=self.cleaned_data['last_name'],
+            is_active=True,
         )
         new_user.save()
+        return new_user
+
+
+class UserProfileForm(forms.ModelForm):
+    
+    class Meta:
+        model = UserProfile
         
-class UserRegistrationForm(forms.Form):
-    first_name = forms.CharField(max_length=30)
-    last_name = forms.CharField(max_length=30)
-    email = forms.CharField(max_length=254)
-    password = forms.CharField(widget=forms.PasswordInput)
-    confirm_password = forms.CharField(widget=forms.PasswordInput)
+    def __init__(self, *args, **kwargs):
+        super(UserProfileForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-user-profile'
+        #self.helper.form_class = 'form-horizontal'
+        self.helper.form_method = 'post'
+        self.helper.form_action = '/account/register/profile/'
+        self.helper.add_input(Submit('submit', 'Complete'))
+        

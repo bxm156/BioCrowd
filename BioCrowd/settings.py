@@ -109,7 +109,6 @@ MIDDLEWARE_CLASSES = (
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'BioCrowd.apps.login.backends.PopulatedCASBackend',
 )
 
 CAS_SERVER_URL = "https://login.case.edu/cas/"
@@ -156,7 +155,7 @@ INSTALLED_APPS = (
 COMPRESS_PRECOMPILERS = (
    ('text/less', 'lessc {infile} {outfile}'),
 )
-
+CRISPY_FAIL_SILENTLY = not DEBUG
 CRISPY_TEMPLATE_PACK = 'bootstrap'
 
 # A sample logging configuration. The only tangible logging
