@@ -209,5 +209,5 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
-    'BioCrowd.apps.jobs.context_processors.site_title'
+    'BioCrowd.apps.pages.context_processors.site_title'
 )
