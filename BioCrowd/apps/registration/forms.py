@@ -21,21 +21,21 @@ class UserForm(forms.ModelForm):
         #self.helper.form_class = 'form-horizontal'
         self.helper.form_method = 'post'
         self.helper.form_action = '/account/register/'
-        self.helper.add_input(Submit('submit', 'Sign up'))
-        #self.helper.layout = Layout(
-        #    Fieldset(
-        #        'something',
-        #        'first_name',
-        #        'last_name',
-        #        'email',
-        #        'password',
-        #        'confirm_password'
-        #    ),
-        #    FormActions(
-        #        Submit('submit', 'Signup')
-        #    )
-        #)
-        #self.helper.all().wrap(Field, css_class="input-xxlarge")
+        #self.helper.add_input(Submit('submit', 'Sign up'))
+        self.helper.layout = Layout(
+            Fieldset(
+                'Sign up',
+                'first_name',
+                'last_name',
+                'email',
+                'password',
+                'confirm_password'
+            ),
+            FormActions(
+                Submit('submit', 'Signup', css_class="btn-large")
+            )
+        )
+        self.helper.filter(basestring, greedy=True).wrap(Field, css_class="input-xlarge")
         
 
         
