@@ -3,8 +3,10 @@ from django.contrib.auth.models import AbstractBaseUser
 
 from BioCrowd import settings
 from BioCrowd.apps.accounts.common import POSITION_LEVELS, GRADUATE
-from BioCrowd.apps.accounts.managers import MyUserManager
+from BioCrowd.apps.accounts.managers import MyUserManager, WorkerProfileManager
 from BioCrowd.apps.universities.models import University
+
+from pycrowd.workers.models import WorkerProfile as pycrowdWorker
 
 
 class User(AbstractBaseUser):
@@ -29,8 +31,9 @@ class User(AbstractBaseUser):
     
     objects = MyUserManager()
 
-class UserProfile(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, primary_key=True, editable=False)
+class WorkerProfile(pycrowdWorker):
     position = models.IntegerField(choices=POSITION_LEVELS, default=GRADUATE)
     supervisor = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="supervisor", null=True, blank=True)
     university = models.ForeignKey(University)
+
+    objects = WorkerProfileManager()

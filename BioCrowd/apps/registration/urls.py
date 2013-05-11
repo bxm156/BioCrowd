@@ -7,6 +7,6 @@ from django.conf.urls import patterns
 
 urlpatterns = patterns('BioCrowd.apps.registration.views',
     (r'^register/$','register'),
-    (r'^register/profile$','profile'),
+    (r'^register/profile/$','profile'),
     (r'^activate/$','activate'),
 )

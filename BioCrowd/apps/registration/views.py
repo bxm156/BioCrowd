@@ -8,24 +8,19 @@ from BioCrowd.apps.registration.forms import UserForm, UserProfileForm
 
 def register(request):
     context = RequestContext(request)
-    if request.method == 'POST':
-        data = request.POST.copy()
-        form = UserForm(data)
-        if form.is_valid():
-            user = form.save()
-            user = authenticate(username=user.email, password=form.cleaned_data['password'])
-            if user is not None:
-                if user.is_active:
-                    print "You provided a correct username and password!"
-                    login(request, user)
-                    return redirect('/account/register/profile')
-                else:
-                    print "Your account has been disabled!"
+    form = UserForm(request.POST or None)
+    if form.is_valid():
+        user = form.save()
+        user = authenticate(username=user.email, password=form.cleaned_data['password'])
+        if user is not None:
+            if user.is_active:
+                print "You provided a correct username and password!"
+                login(request, user)
+                return redirect('/account/register/profile')
             else:
-                print "Your username and password were incorrect."
-           
-    else:
-        form = UserForm()
+                print "Your account has been disabled!"
+        else:
+            print "Your username and password were incorrect."
     context.update({'form':form})
     return render_to_response('register.djhtml', context)
 
@@ -35,13 +30,9 @@ def activate(request, user_id, key):
 @login_required
 def profile(request):
     context = RequestContext(request)
-    if request.method == 'POST':
-        data = request.POST.copy()
-        form = UserProfileForm(data)
-        if form.is_valid():
-            form.save()
-            return redirect("/account/")
-    else:
-        form = UserProfileForm()
+    form = UserProfileForm(request.POST,user=request.user)
+    if form.is_valid():
+        form.save()
+        return redirect("/account/")
     context.update({'form':form})
     return render_to_response('register.djhtml', context)

@@ -1,0 +1,1 @@
+WORKER_PROFILE = "Biocrowd.apps.accounts.WorkerProfile"

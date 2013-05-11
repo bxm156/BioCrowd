@@ -140,6 +140,7 @@ INSTALLED_APPS = (
     'BioCrowd.apps.pages',
     'BioCrowd.apps.jobs',
     'BioCrowd.apps.universities',
+    'pycrowd',
     'pycrowd.workers',
     'pycrowd.query',
     'pycrowd.jobs',
@@ -211,3 +212,5 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.messages.context_processors.messages",
     'BioCrowd.apps.pages.context_processors.site_title'
 )
+
+from settings_pycrowd import *
