@@ -5,7 +5,7 @@
 		<div class="well sidebar-nav">
 			<ul class="nav nav-list">
 				<li class="nav-header">
-					Sidebar
+					Tasks
 				</li>
 				<li class="active">
 					<a href="#">Link</a>
@@ -20,7 +20,7 @@
 					<a href="#">Link</a>
 				</li>
 				<li class="nav-header">
-					Sidebar
+					Jobs
 				</li>
 				<li>
 					<a href="#">Link</a>
@@ -41,7 +41,7 @@
 					<a href="#">Link</a>
 				</li>
 				<li class="nav-header">
-					Sidebar
+					Account
 				</li>
 				<li>
 					<a href="#">Link</a>
@@ -50,7 +50,7 @@
 					<a href="#">Link</a>
 				</li>
 				<li>
-					<a href="#">Link</a>
+					<a href="/account/logout">Logout</a>
 				</li>
 			</ul>
 		</div><!--/.well -->

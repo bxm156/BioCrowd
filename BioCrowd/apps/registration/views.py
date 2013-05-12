@@ -1,12 +1,15 @@
 # Create your views here.
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render_to_response, redirect
+from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.shortcuts import RequestContext
 
 from BioCrowd.apps.registration.forms import UserForm, UserProfileForm
+from BioCrowd.apps.accounts.models import WorkerProfile
 
 def register(request):
+    if request.user.is_authenticated():
+        redirect("/account/")
     context = RequestContext(request)
     form = UserForm(request.POST or None)
     if form.is_valid():
@@ -29,6 +32,8 @@ def activate(request, user_id, key):
     
 @login_required
 def profile(request):
+    if WorkerProfile.objects.filter(user=request.user).exists():
+        return redirect("/account/")
     context = RequestContext(request)
     form = UserProfileForm(request.POST,user=request.user)
     if form.is_valid():
